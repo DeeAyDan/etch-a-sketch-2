@@ -1,4 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 #pageBody{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+#pageTitle{
+    margin-top: 3%;
+    flex: 0;
+}
+
+#pageFooter{
+    margin-bottom: 3%;
+    flex: 0;
 }
