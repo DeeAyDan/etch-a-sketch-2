@@ -25,3 +25,15 @@ html, body {
 #pageContent{
     display: flex;
 }
+
+#drawingGrid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+.fieldGridSquare{
+    background-color: bisque;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+}
