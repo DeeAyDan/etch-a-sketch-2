@@ -1,5 +1,8 @@
 let isMouseDown = false;
 let currentSize = 16;
+let alphaLevel = 10;
+let alphaIncrease = true;
+let mode = 'alpha';
 
 function makeGrid(size){
     const container = document.getElementById('drawingGrid');
@@ -14,7 +17,30 @@ function makeGrid(size){
 }
 
 function changeBackgroundColor(element){
-    element.style.backgroundColor = "black";
+    if(mode === 'normal'){
+        element.style.backgroundColor = "rgb(0, 0, 0)";
+    }
+    else if(mode === 'alpha'){
+        if(alphaIncrease === true){
+            element.style.backgroundColor = `rgba(0, 0, 0, ${alphaLevel}%)`;
+            alphaLevel += 10;
+        }
+        else if (alphaIncrease === false){
+            element.style.backgroundColor = `rgba(0, 0, 0, ${alphaLevel}%)`;
+            alphaLevel -= 10;
+        }
+
+        if (alphaLevel === 100 && alphaIncrease === true){
+            alphaIncrease = false;
+        }
+        else if (alphaLevel === 10 && alphaIncrease === false){
+            alphaIncrease = true;
+        }
+        
+    }
+}
+function changeBackgroundWithAlpha(){
+
 }
 function deleteGrid(){
     const squaresToDelete = document.querySelectorAll('.fieldGridSquare');
