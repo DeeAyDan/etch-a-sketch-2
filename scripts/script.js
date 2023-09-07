@@ -1,3 +1,5 @@
+let isMouseDown = false;
+
 function makeGrid(size){
     const container = document.getElementById('drawingGrid');
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -22,10 +24,21 @@ function deleteGrid(){
 }
 
 function changeSize(){
-    const userInput = prompt(`Please enter the new size of the grid.`)
-    deleteGrid();
-    makeGrid(userInput);
-
+    const userInput = prompt(`Please enter the new size of the grid.`);
+    if(userInput > 100){
+        alert('Grid size can not be larger than 100.');
+        deleteGrid();
+        makeGrid(100);
+    }
+    else if(userInput < 1){
+        alert('Grid size should be at least 1.');
+        deleteGrid();
+        makeGrid(10);
+    }
+    else{
+        deleteGrid();
+        makeGrid(userInput);
+    }
 }
 
 makeGrid(16);
