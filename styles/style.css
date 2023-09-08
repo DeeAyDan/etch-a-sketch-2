@@ -29,7 +29,13 @@ html, body {
 }
 
 #pageControls {
-    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    height: 100%;
+    margin-right: 50px;
+    width: 150px;
 }
 
 #drawingGrid {
@@ -42,4 +48,12 @@ html, body {
 .fieldGridSquare{
     background-color: rgb(255, 244, 231);
     border: 1px solid rgba(168, 168, 168, 0.205);
+}
+
+.controlButton{
+
+}
+
+.activeButton{
+    background-color: aquamarine;
 }

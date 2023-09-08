@@ -11,10 +11,10 @@
         <div id="pageTitle">Etch-a-Sketch</div>
         <div id="pageContent">
             <div id="pageControls">
-                <button onclick="mode = 'normal'">Normal Mode</button>
-                <button onclick="mode = 'alpha'">Gradiant Mode</button>
-                <button onclick="changeSize()">Change Size</button>
-                <button onclick="resetGrid()">Reset</button>
+                <button class="normalButton controlButton activeButton" onclick="changeToNormal()">Normal Mode</button>
+                <button class="alphaButton controlButton" onclick="changeToAlpha()">Gradiant Mode</button>
+                <button class="controlButton" onclick="changeSize()">Change Size</button>
+                <button class="controlButton" onclick="resetGrid()">Reset</button>
             </div>
             <div id="drawingGrid">
 

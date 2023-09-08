@@ -2,7 +2,7 @@ let isMouseDown = false;
 let currentSize = 16;
 let alphaLevel = 10;
 let alphaIncrease = true;
-let mode = 'alpha';
+let mode = 'normal';
 
 function makeGrid(size){
     const container = document.getElementById('drawingGrid');
@@ -39,9 +39,6 @@ function changeBackgroundColor(element){
         
     }
 }
-function changeBackgroundWithAlpha(){
-
-}
 function deleteGrid(){
     const squaresToDelete = document.querySelectorAll('.fieldGridSquare');
     squaresToDelete.forEach(function (element){
@@ -71,5 +68,19 @@ function changeSize(){
 function resetGrid(){
     deleteGrid();
     makeGrid(currentSize);
+}
+function changeToNormal(){
+    mode = 'normal';
+    const normalButton = document.querySelector('.normalButton');
+    normalButton.classList.add('activeButton');
+    const alphaButton = document.querySelector('.alphaButton');
+    alphaButton.classList.remove('activeButton');
+}
+function changeToAlpha(){
+    mode = 'alpha';
+    const normalButton = document.querySelector('.normalButton');
+    normalButton.classList.remove('activeButton');
+    const alphaButton = document.querySelector('.alphaButton');
+    alphaButton.classList.add('activeButton');
 }
 makeGrid(currentSize);
